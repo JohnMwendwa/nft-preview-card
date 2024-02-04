@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Primary */
+  --soft-blue: hsl(215, 51%, 70%);
+  --cyan: hsl(178, 100%, 50%);
+
+  /* Neutral */
+  --very-dark-blue-1: hsl(217, 54%, 11%);
+  --very-dark-blue-2: hsl(216, 50%, 16%);
+  --very-dark-blue-3: hsl(215, 32%, 27%);
+  --white: hsl(0, 0%, 100%);
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+  font-size: 1.125rem;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+main {
+  display: grid;
+  place-content: center;
+  background-color: var(--very-dark-blue-1);
+  min-height: 100vh;
+  padding: 4rem 1rem;
+}
+
+.card {
+  --rad: 0.75rem;
+  background-color: var(--very-dark-blue-2);
+  padding: 1.5rem;
+  border-radius: 1.25rem;
+  max-width: 24rem;
+}
+.card__header {
+  position: relative;
+  cursor: pointer;
+}
+
+.card__header > img {
+  border-radius: var(--rad);
+}
+
+.card__overlay {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  display: grid;
+  place-content: center;
+  transition: 0.3s all;
+  width: 100%;
+  z-index: 2;
+  border-radius: var(--rad);
+  background-color: hsla(178, 100%, 50%, 0.3);
+}
+
+.card__header:hover .card__overlay {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.card__body {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--very-dark-blue-3);
+}
+
+.card__body h1 {
+  color: var(--white);
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  transition: 0.3s all;
+}
+
+.card__body h1:hover {
+  color: var(--cyan);
+  cursor: pointer;
+}
+
+p {
+  color: var(--soft-blue);
+  font-weight: 300;
+}
+
+.card__details {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+.card__details div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.card__details .accent p {
+  color: var(--cyan);
+  font-weight: 600;
+}
+
+.card__footer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 0 0.75rem;
+}
+
+.card__footer div {
+  display: grid;
+  place-content: center;
+  background-color: var(--white);
+  border-radius: 50%;
+  width: 2.1rem;
+  aspect-ratio: 1 / 1;
+}
+.card__footer img {
+  width: 2rem;
+  aspect-ratio: 1 / 1;
+}
+
+.card__footer p span {
+  color: var(--white);
+  transition: 0.3s all;
+}
+
+.card__footer p span:hover {
+  color: var(--cyan);
+  cursor: pointer;
+}
